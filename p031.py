@@ -8,12 +8,12 @@ How many different ways can 2f be made using any number of coins?
 """
 
 
-def countChangeWays(amount, *coins):
+def count_change_ways(amount, *coins):
     return (0 if amount < 0 or not coins else
             1 if amount == 0 else
-            (countChangeWays(amount, *coins[1:])
-             + countChangeWays(amount - coins[0], *coins)))
+            (count_change_ways(amount, *coins[1:])
+             + count_change_ways(amount - coins[0], *coins)))
 
-ans = countChangeWays(200, 200,100,50,20,10,5,2,1)
+ans = count_change_ways(200, 200, 100, 50, 20, 10, 5, 2, 1)
 
 print(ans)
